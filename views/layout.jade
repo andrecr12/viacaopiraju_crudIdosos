@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		title Viação Piraju - Gerenciamento de Idosos
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/css/style.css')
+		script(type='text/javascript', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+	body
+		#full-wrapper.container
+
+			.header.clear-fix
+		
+				ul.nav.nav-pills.pull-right
+					each pageConfig in navMenu
+						if page == pageConfig.page
+							li(role="presentation").active
+								a(href="#{pageConfig.href}") #{pageConfig.label}
+						else  
+							li(role="presentation")
+								a(href="#{pageConfig.href}") #{pageConfig.label}
+		
+				h2 Viação Piraju
+				p  Gerenciamento de Idosos
+
+			
+			#content-wrapper.container
+
+				block content
+
+			footer.footer
+				p © Viação Piraju Ltda. 2015
+

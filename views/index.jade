@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+	p Atualmente, existem #{totalNumber} idosos cadastrados.
+	
+	table.table.table-condensed
+		thead
+			tr
+				th Nome
+				th RG
+				th Validade
+				th Possui foto?
+		tbody
+			each p in people
+				tr
+					td=p.nome
+					td=p.rg
+					td=moment(p["dt-validade"]).format("DD-MM-YYYY")
+					td=((p.photo) ? 'Sim' : 'Não')

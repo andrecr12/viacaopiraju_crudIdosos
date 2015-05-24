@@ -1,0 +1,44 @@
+extends layout
+
+block content
+
+	p Preencha os campos abaixo e clique em salvar.
+	p Campos com (*) são obrigatórios.
+
+	form
+		.form-group
+			label(for="first-name") Primeiro Nome*:
+			input#first-name.form-control(type='text', placeholder='')
+		// .form-group
+		// 	label(for="middle-Name") Nome(s) do meio
+		// 	input#middle-name.form-control(type='text', placeholder='')
+		// .form-group
+		// 	label(for="last-name") Sobrenome(*)
+		// 	input#last-name.form-control(type='text', placeholder='')
+
+		.form-group
+			label(for="address") Endereço*:
+			input#address.form-control(type='text', placeholder='')
+		// .form-group
+		// 	label(for="addr-street-number")
+		// 	input#addr-street-number.form-control(type='text', placeholder='')
+
+		.row
+			.form-group.col-sm-6
+				label(for="rg") Documento de Identidade*:
+				input#rg.form-control(type='text', placeholder='')
+
+		.form-group.col-sm-6
+			label(for="dt-birth") Data de Nascimento*:
+			input#dt-birth.form-control(type='date', placeholder='')
+
+		.form-group.col-sm-6
+			label(for="dt-expiration") Data de Validade*:
+			input#dt-expiration.form-control(type='date', placeholder='')
+
+		.row
+			.form-group.col-sm-6
+				
+			.form-group.col-sm-6
+				label(for="cid") CID:
+				input#cid.form-control(type='text', placeholder='')
