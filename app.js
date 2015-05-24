@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
 app.locals.moment = require('moment');
 
@@ -8,6 +9,10 @@ app.set('views', 'views');
 app.set('view engine', 'jade');
 
 app.use(express.static('public'));
+app.use(bodyParser.json()); 		// to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+	extended: true
+})); 
 
 app.use('/', require('./routes/index'));
 // app.use('/createPerson', require('./routes/createPerson'));

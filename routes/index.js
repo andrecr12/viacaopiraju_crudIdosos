@@ -32,7 +32,9 @@ router.get('/', function(req, res) {
     	page: 'index',
     	navMenu: pagesConfig,
       totalNumber: total,
-      people: idosos
+      people: idosos,
+      scripts: [],
+      css: []
     });
   });
 });
@@ -40,14 +42,33 @@ router.get('/', function(req, res) {
 router.get('/createPerson', function(req, res) {
   res.render('createPerson', {
   	page: 'createPerson',
-  	navMenu: pagesConfig
+  	navMenu: pagesConfig,
+    scripts: [
+      '/js/lib/jquery-2.1.4.js',
+      '/js/lib/jquery-ui.min.js',
+      '/js/lib/masked-input-plugin.js',
+      '/js/form-control.js'
+    ],
+    css: [
+      '/css/jquery-ui.css'
+    ]
+  });
+});
+
+router.post('/createPerson', function(req, res){
+  
+  idoso.insertOne(req.body)
+  .done(function(){
+    res.json({ success: true });
   });
 });
 
 router.get('/readPerson', function(req, res) {
   res.render('readPerson', {
   	page: 'readPerson',
-  	navMenu: pagesConfig
+  	navMenu: pagesConfig,
+    scripts: [],
+    css: []
   });
 });
 

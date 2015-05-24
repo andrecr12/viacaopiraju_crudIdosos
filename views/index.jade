@@ -16,5 +16,5 @@ block content
 				tr
 					td=p.nome
 					td=p.rg
-					td=moment(p["dt-validade"]).format("DD-MM-YYYY")
+					td=moment(p.dt_validade).format("DD/MM/YYYY")
 					td=((p.photo) ? 'Sim' : 'Não')

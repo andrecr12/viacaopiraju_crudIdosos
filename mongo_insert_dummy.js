@@ -7,8 +7,8 @@ var dummy_data = [{
     "nome": "André Carrasco Rodrigues",
     "endereco": "Rua Ouvidor Peleja, 779, apto 61",
     "rg": "34.303.819-5",
-    "dt-nascimento": new Date("1988-12-07"),
-    "dt-validade": new Date("2015-12-31"),
+    "dt_nascimento": new Date("1988-12-07"),
+    "dt_validade": new Date("2015-12-31"),
     "deficiente": false,
     "cid": null,
     "photo": null
@@ -16,8 +16,8 @@ var dummy_data = [{
     "nome": "Andressa Carrasco Rodrigues",
     "endereco": "Rua João Ignácio Ferreira de Campos, 56",
     "rg": "34.303.820-1",
-    "dt-nascimento": new Date("1990-11-14"),
-    "dt-validade": new Date("2015-11-30"),
+    "dt_nascimento": new Date("1990-11-14"),
+    "dt_validade": new Date("2015-11-30"),
     "deficiente": false,
     "cid": null,
     "photo": null
@@ -25,8 +25,8 @@ var dummy_data = [{
     "nome": "Maria José Carrasco Rodrigues",
     "endereco": "Rua Dionisio Hernandes, 100",
     "rg": "14.145.193-2",
-    "dt-nascimento": new Date("1965-08-13"),
-    "dt-validade": new Date("2016-01-31"),
+    "dt_nascimento": new Date("1965-08-13"),
+    "dt_validade": new Date("2016-01-31"),
     "deficiente": false,
     "cid": null,
     "photo": null

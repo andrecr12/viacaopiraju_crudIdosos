@@ -3,8 +3,12 @@ html
 	head
 		title Viação Piraju - Gerenciamento de Idosos
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+		each s in css
+			link(src=s)
 		link(rel='stylesheet', href='/css/style.css')
 		script(type='text/javascript', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js')
+		each s in scripts
+			script(src=s)
 	body
 		#full-wrapper.container
 

@@ -1,5 +1,6 @@
 var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
+var moment = require('moment');
 var Q = require('q');
 
 var url = 'mongodb://localhost:27017/viacaopiraju';
@@ -24,6 +25,14 @@ var aggregateAll = function(db, callback) {
    });
 };
 
+var insertOneDocument = function(newDoc, db, callback) {
+	db.collection('idosos')
+	.insertOne(newDoc, function(err, result) {
+		assert.equal(err, null);
+		
+		callback(result);
+   });
+};
 
 
 exports.countAll = function() {
@@ -51,3 +60,29 @@ exports.getAll = function() {
 	});
 	return def.promise;
 };
+
+exports.insertOne = function(doc) {
+	var def = Q.defer();
+
+	var newDoc = {
+		"nome"				: doc.nome,
+	    "endereco"			: doc.endereco,
+	    "rg"				: doc.rg,
+	    "dt_nascimento"		: moment(doc.dt_nascimento, 'MM/DD/YYYY').toDate(),
+	    "dt_validade"		: moment(doc.dt_validade, 'MM/DD/YYYY').toDate(),
+	    "deficiente"		: (doc.deficiente == 'true'),
+	    "cid"				: (typeof doc.cid == 'string' && doc.cid != '') ? doc.cid : null,
+	    "photo"				: (typeof doc.photo == 'string' && doc.photo != '') ? doc.photo : null
+	};
+
+console.log('newDoc: ', newDoc);
+	
+	MongoClient.connect(url, function(err, db) {
+	  assert.equal(null, err);
+	  insertOneDocument(newDoc, db, function(result) {
+		db.close();
+		def.resolve(result);
+	  });
+	});
+	return def.promise;
+}
