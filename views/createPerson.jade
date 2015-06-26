@@ -3,39 +3,46 @@ extends layout
 block content
 
 	p Preencha os campos abaixo e clique em salvar.
-	p Campos com (*) são obrigatórios.
+	p Campos com () são obrigatórios.
 
 	form
-		.form-group
-			label(for="name") Primeiro Nome*:
-			input#name.form-control(type='text', placeholder='')
+		.row
+			.form-group.col-sm-3
+				label(for="num-id") N. da carteirinha:
+				input#num-id.form-control(type='text', placeholder='')
+
+		.row
+			.form-group.col-sm-12
+				label(for="name") Primeiro Nome:
+				input#name.form-control(type='text', placeholder='')
 		// .form-group
 		// 	label(for="middle-Name") Nome(s) do meio
 		// 	input#middle-name.form-control(type='text', placeholder='')
 		// .form-group
-		// 	label(for="last-name") Sobrenome(*)
+		// 	label(for="last-name") Sobrenome
 		// 	input#last-name.form-control(type='text', placeholder='')
 
-		.form-group
-			label(for="address") Endereço*:
-			input#address.form-control(type='text', placeholder='')
+		.row
+			.form-group.col-sm-12
+				label(for="address") Endereço:
+				input#address.form-control(type='text', placeholder='')
 		// .form-group
 		// 	label(for="addr-street-number")
 		// 	input#addr-street-number.form-control(type='text', placeholder='')
 
 		.row
 			.form-group.col-sm-6
-				label(for="rg") Documento de Identidade*:
+				label(for="rg") Documento de Identidade:
 				input#rg.form-control(type='text', placeholder='')
 
 		.row
 			.form-group.col-sm-6
-				label(for="dt-birth") Data de Nascimento*:
+				label(for="dt-birth") Data de Nascimento:
 				input#dt-birth.form-control(placeholder='')
 
 		.row
 			.form-group.col-sm-6
-				label(for="dt-expiration") Data de Validade*:
+				label(for="dt-expiration") Data de Validade:
 				input#dt-expiration.form-control(placeholder='')
 
 		.row

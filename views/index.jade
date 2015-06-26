@@ -7,13 +7,15 @@ block content
 	table.table.table-condensed
 		thead
 			tr
+				th Número
 				th Nome
 				th RG
 				th Validade
 				th Possui foto?
 		tbody
 			each p in people
-				tr
+				tr(id=p.num_id)
+					td=p.num_id
 					td=p.nome
 					td=p.rg
 					td=moment(p.dt_validade).format("DD/MM/YYYY")
